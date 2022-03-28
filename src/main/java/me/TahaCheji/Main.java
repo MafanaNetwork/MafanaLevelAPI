@@ -17,6 +17,9 @@ public final class Main extends JavaPlugin {
         this.mySQL = new MySQL();
         this.data = new PlayerLevelSQLGetter(this);
         mySQL.connect();
+        if(mySQL.isConnected()) {
+            data.createTable();
+        }
     }
 
     @Override

@@ -1,6 +1,7 @@
 package me.TahaCheji.levelData;
 
 import me.TahaCheji.Main;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 
 import java.sql.PreparedStatement;
@@ -10,7 +11,8 @@ import java.util.UUID;
 
 public class PlayerLevels {
 
-    public final Player player;
+    public Player player;
+    public OfflinePlayer offlinePlayer;
     public UUID uuid;
 
     private Main plugin;
@@ -18,6 +20,12 @@ public class PlayerLevels {
     public PlayerLevels(Player player) {
         this.player = player;
         this.uuid = player.getUniqueId();
+        this.plugin = Main.getInstance();
+    }
+
+    public PlayerLevels(OfflinePlayer offlinePlayer) {
+        this.offlinePlayer = offlinePlayer;
+        this.uuid = offlinePlayer.getUniqueId();
         this.plugin = Main.getInstance();
     }
 
