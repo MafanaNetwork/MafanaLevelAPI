@@ -1,13 +1,15 @@
 package me.TahaCheji;
 
-import me.TahaCheji.levelData.PlayerLevels;
 import me.TahaCheji.mysqlData.MySQL;
 import me.TahaCheji.mysqlData.PlayerLevelSQLGetter;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class Main extends JavaPlugin {
+public final class Levels extends JavaPlugin implements Listener {
 
-    private static Main instance;
+    private static Levels instance;
     public MySQL mySQL;
     public PlayerLevelSQLGetter data;
 
@@ -20,7 +22,9 @@ public final class Main extends JavaPlugin {
         if(mySQL.isConnected()) {
             data.createTable();
         }
+        getServer().getPluginManager().registerEvents(this, this);
     }
+
 
     @Override
     public void onDisable() {
@@ -31,7 +35,7 @@ public final class Main extends JavaPlugin {
         return mySQL;
     }
 
-    public static Main getInstance() {
+    public static Levels getInstance() {
         return instance;
     }
 }

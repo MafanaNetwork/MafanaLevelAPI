@@ -1,6 +1,6 @@
 package me.TahaCheji.mysqlData;
 
-import me.TahaCheji.Main;
+import me.TahaCheji.Levels;
 import org.bukkit.entity.Player;
 
 import java.sql.PreparedStatement;
@@ -9,8 +9,8 @@ import java.sql.SQLException;
 import java.util.UUID;
 
 public class PlayerLevelSQLGetter {
-    private Main plugin;
-    public PlayerLevelSQLGetter(Main plugin) {
+    private Levels plugin;
+    public PlayerLevelSQLGetter(Levels plugin) {
         this.plugin = plugin;
     }
     public void createTable() {
