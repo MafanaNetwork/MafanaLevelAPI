@@ -25,7 +25,7 @@ public class PlayerLevels {
     public void addXP(int xp) {
         try {
             PreparedStatement ps = plugin.mySQL.getConnection().prepareStatement("UPDATE playerlevel SET XP=? WHERE UUID=?");
-            ps.setInt(1, (getXp(uuid) + xp));
+            ps.setInt(1, (getXp() + xp));
             ps.setString(2, uuid.toString());
             ps.executeUpdate();
         } catch (SQLException e) {
@@ -60,10 +60,10 @@ public class PlayerLevels {
         return 0;
     }
 
-    public void addLevel( int lvl) {
+    public void addLevel(int lvl) {
         try {
             PreparedStatement ps = plugin.mySQL.getConnection().prepareStatement("UPDATE playerlevel SET LEVEL=? WHERE UUID=?");
-            ps.setInt(1, (getXp(uuid) + lvl));
+            ps.setInt(1, (getXp() + lvl));
             ps.setString(2, uuid.toString());
             ps.executeUpdate();
         } catch (SQLException e) {
