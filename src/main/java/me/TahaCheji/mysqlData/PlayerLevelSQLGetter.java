@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.util.UUID;
 
 public class PlayerLevelSQLGetter {
-    private Levels plugin;
+    private final Levels plugin;
     public PlayerLevelSQLGetter(Levels plugin) {
         this.plugin = plugin;
     }

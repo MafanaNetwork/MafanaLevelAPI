@@ -1,5 +1,5 @@
 name: MafanaLevelAPI
 version: '${project.version}'
-main: me.TahaCheji.Main
+main: me.TahaCheji.Levels
 api-version: 1.18
 description: Levels API for diffrent servers
